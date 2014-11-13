@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<component>
+  <table action="change" old_name="#__collectionviews_collectionstate" new_name="#__collectionviews_arrangement" table_name="#__collectionviews_arrangement" storage_engine="" collation="utf8_general_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field action="change" field_name="catid" field_type="INT" field_length="11" description="Choose a category for this view"/>
+    <field action="add" field_name="title" field_type="VARCHAR" field_length="255" description="Include a title for this view"/>
+    <field action="change" field_name="password" field_type="VARCHAR" field_length="255" description="Choose a password for this view"/>
+    <field action="change" field_name="items" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="change" field_name="item_ids" field_type="TEXT" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+  </table>
+  <table action="change" old_name="#__collectionviews_item" new_name="#__collectionviews_collectionitem" table_name="#__collectionviews_collectionitem" storage_engine="" collation="utf8_general_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field action="add" field_name="catid" field_type="INT" field_length="11" description="Select a collection for this item"/>
+    <field action="add" field_name="title" field_type="VARCHAR" field_length="255" description="Title of this collection item"/>
+    <field action="add" field_name="image" field_type="VARCHAR" field_length="255" description="Choose the image for this collection item"/>
+    <field action="add" field_name="file" field_type="VARCHAR" field_length="255" description="Upload a file for this collection item"/>
+    <field action="add" field_name="note" field_type="TEXT" description="Include any notes for this collection item here"/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+  </table>
+</component>

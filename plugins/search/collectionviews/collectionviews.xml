@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="search">
+    <name>plg_search_collectionviews</name>
+    <author>Eric Murray</author>
+    <creationDate>2014-11-13</creationDate>
+    <copyright>Copyright (C) 2014. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>eric@altosmarketing.com</authorEmail>
+    <authorUrl>http://ericmurray.me</authorUrl>
+    <version>1.0.3</version>
+    <description>PLG_SEARCH_COM_COLLECTIONVIEWS_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="collectionviews">collectionviews.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <languages>
+        
+			<language tag="en-GB">language/en-GB.plg_search_collectionviews.ini</language>
+			<language tag="en-GB">language/en-GB.plg_search_collectionviews.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+
+            <fieldset name="basic">
+                <field name="search_limit" type="text" default="50" size="5"
+                       description="PLG_SEARCH_COM_COLLECTIONVIEWS_FIELD_SEARCHLIMIT_DESC"
+                       label="PLG_SEARCH_COM_COLLECTIONVIEWS_FIELD_SEARCHLIMIT_LABEL" />
+            </fieldset>
+
+        </fields>
+    </config>
+</extension>

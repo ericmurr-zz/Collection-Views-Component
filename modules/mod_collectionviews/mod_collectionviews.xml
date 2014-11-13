@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" method="upgrade" client="site">
+    <name>MOD_COLLECTIONVIEWS_NAME</name>
+    <creationDate>2014-11-13</creationDate>
+    <copyright>Copyright (C) 2014. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Eric Murray</author>
+    <authorEmail>eric@altosmarketing.com</authorEmail>
+    <authorUrl>http://ericmurray.me</authorUrl>
+    <version>1.0.3</version>
+    <description>MOD_COLLECTIONVIEWS_DESCRIPTION</description>
+    
+    <files>
+        <filename module="mod_collectionviews">mod_collectionviews.php</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+    <languages>
+        
+			<language tag="en-GB">language/en-GB.mod_collectionviews.ini</language>
+			<language tag="en-GB">language/en-GB.mod_collectionviews.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset 
+                name="content_type" 
+                label="MOD_COLLECTIONVIEWS_CONTENT_TYPE_TAB_LBL"
+                description="MOD_COLLECTIONVIEWS_CONTENT_TYPE_TAB_DESC">
+                <field
+                    name="content_type" type="list"
+                    label="MOD_COLLECTIONVIEWS_CONTENT_TYPE_LBL"
+                    description="MOD_COLLECTIONVIEWS_CONTENT_TYPE_DESC">
+                    <option value="blank">MOD_COLLECTIONVIEWS_CUSTOM_CONTENT</option>
+                    <option value="list">MOD_COLLECTIONVIEWS_LIST</option>
+                    <option value="item">MOD_COLLECTIONVIEWS_ITEM</option>
+                </field>
+            </fieldset>
+            <fieldset 
+                name="blank_content" 
+                label="MOD_COLLECTIONVIEWS_CUSTOM_CONTENT_TAB_LBL"
+                description="MOD_COLLECTIONVIEWS_CUSTOM_CONTENT_TAB_DESC">
+                <field 
+                    name="html_content" type="editor" filter="safehtml"
+                    label="MOD_COLLECTIONVIEWS_HTML_LBL"
+                    description="MOD_COLLECTIONVIEWS_HTML_DESC" />
+            </fieldset>
+            <fieldset 
+                name="list_content" 
+                label="MOD_COLLECTIONVIEWS_LIST_CONTENT_TAB_LBL"
+                description="MOD_COLLECTIONVIEWS_LIST_CONTENT_TAB_DESC">
+                <field
+                    name="table" type="list"
+                    label="MOD_COLLECTIONVIEWS_TABLE_LBL"
+                    description="MOD_COLLECTIONVIEWS_TABLE_DESC">
+                    
+	<option value="#__collectionviews_collectionitem">#__collectionviews_collectionitem</option>
+	<option value="#__collectionviews_arrangement">#__collectionviews_arrangement</option>
+                </field>
+                <field 
+                    name="field" type="groupedlist" default=""
+                    label="MOD_COLLECTIONVIEWS_FIELD_LBL"
+                    description="MOD_COLLECTIONVIEWS_FIELD_DESC">
+                    
+	<group label="#__collectionviews_collectionitem">
+		<option value="id">id</option>
+		<option value="catid">catid</option>
+		<option value="title">title</option>
+		<option value="image">image</option>
+		<option value="file">file</option>
+		<option value="note">note</option>
+		<option value="created_by">created_by</option>
+	</group>
+	<group label="#__collectionviews_arrangement">
+		<option value="id">id</option>
+		<option value="catid">catid</option>
+		<option value="title">title</option>
+		<option value="password">password</option>
+		<option value="items">items</option>
+		<option value="item_ids">item_ids</option>
+		<option value="created_by">created_by</option>
+	</group>
+                </field>
+                <field 
+                    name="offset" type="text" default="0" filter="uint" class="input-small"
+                    label="MOD_COLLECTIONVIEWS_OFFSET_LBL"
+                    description="MOD_COLLECTIONVIEWS_OFFSET_DESC" />
+                <field 
+                    name="limit" type="text" default="10" filter="uint" class="input-small"
+                    label="MOD_COLLECTIONVIEWS_LIMIT_LBL"
+                    description="MOD_COLLECTIONVIEWS_LIMIT_DESC" />
+            </fieldset>
+            <fieldset 
+                name="item_content" 
+                label="MOD_COLLECTIONVIEWS_ITEM_CONTENT_TAB"
+                description="MOD_COLLECTIONVIEWS_ITEM_CONTENT_TAB_DESC">
+                <field
+                    name="item_table" type="list"
+                    label="MOD_COLLECTIONVIEWS_TABLE_LBL"
+                    description="MOD_COLLECTIONVIEWS_TABLE_DESC">
+                    
+	<option value="#__collectionviews_collectionitem">#__collectionviews_collectionitem</option>
+	<option value="#__collectionviews_arrangement">#__collectionviews_arrangement</option>
+                </field>
+                <field 
+                    name="item_id" type="text" filter="uint" class="input-small"
+                    label="MOD_COLLECTIONVIEWS_ITEM_ID_LBL"
+                    description="MOD_COLLECTIONVIEWS_ITEM_ID_DESC"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

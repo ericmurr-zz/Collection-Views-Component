@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_COLLECTIONVIEWS_FORM_LBL_ARRANGEMENT_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+ <field name="catid" type="foreignkey" class="inputbox"
+            label="COM_COLLECTIONVIEWS_FORM_LBL_ARRANGEMENT_CATID"
+            description="COM_COLLECTIONVIEWS_FORM_DESC_ARRANGEMENT_CATID" input_type="list" table="#__categories" key_field="id" value_field="title"  /> 
+
+       <field name="filter_catid" type="sql" class="inputbox"
+            onchange="this.form.submit();"
+            query="SELECT 0 AS `id`, '- Please select catid -' AS `title` UNION SELECT `id`, `title` FROM `#__categories`" key_field="id" value_field="title"
+             /> 
+
+       <field name="title" type="text"
+                
+            label="COM_COLLECTIONVIEWS_FORM_LBL_ARRANGEMENT_TITLE"
+            description="COM_COLLECTIONVIEWS_FORM_DESC_ARRANGEMENT_TITLE" 
+                
+                
+                 required="true"  /> 
+
+       <field name="password" type="text" size="40" class="inputbox"
+        
+            label="COM_COLLECTIONVIEWS_FORM_LBL_ARRANGEMENT_PASSWORD"
+            description="COM_COLLECTIONVIEWS_FORM_DESC_ARRANGEMENT_PASSWORD" 
+        
+        
+         required="true" 
+        filter="safehtml" /> 
+
+       <field name="items" type="text" size="40" class="inputbox"
+        
+            label="COM_COLLECTIONVIEWS_FORM_LBL_ARRANGEMENT_ITEMS"
+            description="COM_COLLECTIONVIEWS_FORM_DESC_ARRANGEMENT_ITEMS" 
+        
+        
+        
+        filter="safehtml" /> 
+
+ <field name="item_ids" type="foreignkey" class="inputbox"
+            label="COM_COLLECTIONVIEWS_FORM_LBL_ARRANGEMENT_ITEM_IDS"
+            description="COM_COLLECTIONVIEWS_FORM_DESC_ARRANGEMENT_ITEM_IDS" input_type="list" table="#__collectionviews_collectionitem" key_field="id" value_field="title"  multiple="multiple"/> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_COLLECTIONVIEWS_FORM_LBL_ARRANGEMENT_CREATED_BY"
+            description="COM_COLLECTIONVIEWS_FORM_DESC_ARRANGEMENT_CREATED_BY"  /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>
